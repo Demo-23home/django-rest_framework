@@ -1,43 +1,15 @@
 import requests
 
-# endpoint = "https://httpbin.org/status/200"
-endpoint = "http://localhost:8000/api"
-get_response = requests.get(endpoint, params={"abc":123}, json={"query":"hello python"})
-                # >> API method 
-                # RestAPI's >> Web API
+# endpoint = "https://httpbin.org/status/200/"
+# endpoint = "https://httpbin.org/anything"
+endpoint = "http://localhost:8000/api/" #http://127.0.0.1:8000/ 
 
-print(get_response.json())
-# print(requests) 
-
-
-
-
+get_response = requests.get(endpoint, json={"product_id": 123 }) # HTTP Request
+# print(get_response.text) # print raw text response
 # print(get_response.status_code)
-# print(get_response.json()) # print the raw text response
 
-# HTTP request > HTML >> made for humans 
-# RESTAPI HTTP request > JSON (xml) >> made for SW
-# JSON >> Java Script Object Notion
-
-
-# {
-#   "args": {}, 
-#   "data": "", 
-#   "files": {}, 
-#   "form": {}, 
-#   "headers": {
-#     "Accept": "*/*", 
-#     "Accept-Encoding": "gzip, deflate", 
-#     "Host": "httpbin.org", 
-#     "User-Agent": "python-requests/2.31.0", 
-#     "X-Amzn-Trace-Id": "Root=1-652db1ec-4ab2f84c12f07fd6186e4f22" >> JSON Response
-#   }, 
-#   "json": null, 
-#   "method": "GET", 
-#   "origin": "156.197.160.108", 
-#   "url": "https://httpbin.org/anything"
-# }
-
-
-
-# python dict {'args': {}, 'data': '', 'files': {}, 'form': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.31.0', 'X-Amzn-Trace-Id': 'Root=1-652db28f-533eed03589ebecc5319506a'}, 'json': None, 'method': 'GET', 'origin': '156.197.160.108', 'url': 'https://httpbin.org/anything'}
+# HTTP Request -> HTML
+# REST API HTTP Request -> JSON
+# JavaScript Object Nototion ~ Python Dict
+print(get_response.json())
+# print(get_response.status_code)
